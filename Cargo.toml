@@ -1,0 +1,16 @@
+[package]
+name = "own"
+version = "0.1.0"
+description = "Wraps an owned or borrowed value."
+documentation = "https://docs.rs/own/"
+authors = ["Azriel Hoh <azriel91@gmail.com>"]
+edition = "2021"
+homepage = "https://github.com/azriel91/own"
+repository = "https://github.com/azriel91/own"
+readme = "README.md"
+categories = []
+keywords = ["own", "ref"]
+license = "MIT OR Apache-2.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
