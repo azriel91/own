@@ -17,7 +17,7 @@ There is a `OwnedOrRef::reborrow` method that allows the value to be borrowed wi
 Add the following to `Cargo.toml`
 
 ```toml
-own = "0.1.0"
+own = "0.1.1"
 ```
 
 # Examples
