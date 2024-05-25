@@ -1,6 +1,6 @@
 [package]
 name = "own"
-version = "0.1.0"
+version = "0.1.1"
 description = "Wraps an owned or borrowed value."
 documentation = "https://docs.rs/own/"
 authors = ["Azriel Hoh <azriel91@gmail.com>"]
@@ -17,3 +17,6 @@ crate-type = ["cdylib", "rlib"]
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-bindgen = "0.2.92"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage_nightly)'] }
