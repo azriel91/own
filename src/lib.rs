@@ -14,7 +14,7 @@
 //! Add the following to `Cargo.toml`
 //!
 //! ```toml
-//! own = "0.1.1"
+//! own = "0.1.2"
 //! ```
 //!
 //! # Examples

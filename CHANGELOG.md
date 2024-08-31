@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 (2024-08-31)
+
+* Update dependency versions.
+
+
 ## 0.1.1 (2024-05-25)
 
 * Removed `build.rs` cfg lint workaround.
