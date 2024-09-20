@@ -1,6 +1,6 @@
 # Changelog
 
-## unreleased
+## 0.1.3 (2024-09-20)
 
 * Derive `Clone` for `OwnedOrRef`.
 

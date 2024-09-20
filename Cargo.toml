@@ -1,6 +1,6 @@
 [package]
 name = "own"
-version = "0.1.2"
+version = "0.1.3"
 description = "Wraps an owned or borrowed value."
 documentation = "https://docs.rs/own/"
 authors = ["Azriel Hoh <azriel91@gmail.com>"]
