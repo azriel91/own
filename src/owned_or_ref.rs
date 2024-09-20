@@ -1,7 +1,7 @@
 use std::ops::Deref;
 
 /// Holds an owned `T` or an immutable reference.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum OwnedOrRef<'r, T> {
     /// Holds an owned `T`.
     Owned(T),
@@ -49,6 +49,13 @@ mod tests {
     use std::ops::Deref;
 
     use super::OwnedOrRef;
+
+    #[test]
+    fn clone() {
+        let owned_or_ref = OwnedOrRef::Owned(123);
+
+        assert_eq!(owned_or_ref, owned_or_ref.clone());
+    }
 
     #[test]
     fn debug() {

@@ -1,5 +1,10 @@
 # Changelog
 
+## unreleased
+
+* Derive `Clone` for `OwnedOrRef`.
+
+
 ## 0.1.2 (2024-08-31)
 
 * Update dependency versions.
