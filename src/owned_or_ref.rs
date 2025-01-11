@@ -9,7 +9,7 @@ pub enum OwnedOrRef<'r, T> {
     Ref(&'r T),
 }
 
-impl<'r, T> OwnedOrRef<'r, T> {
+impl<T> OwnedOrRef<'_, T> {
     /// Reborrows this `OwnedOrRef` with a shorter lifetime.
     ///
     /// For an `Owned` variant, this borrows it as a `Ref`.
@@ -21,7 +21,7 @@ impl<'r, T> OwnedOrRef<'r, T> {
     }
 }
 
-impl<'r, T> Deref for OwnedOrRef<'r, T> {
+impl<T> Deref for OwnedOrRef<'_, T> {
     type Target = T;
 
     fn deref(&self) -> &Self::Target {
@@ -32,7 +32,7 @@ impl<'r, T> Deref for OwnedOrRef<'r, T> {
     }
 }
 
-impl<'r, T> From<T> for OwnedOrRef<'r, T> {
+impl<T> From<T> for OwnedOrRef<'_, T> {
     fn from(v: T) -> Self {
         Self::Owned(v)
     }

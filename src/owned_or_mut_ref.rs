@@ -9,7 +9,7 @@ pub enum OwnedOrMutRef<'r, T> {
     MutRef(&'r mut T),
 }
 
-impl<'r, T> OwnedOrMutRef<'r, T> {
+impl<T> OwnedOrMutRef<'_, T> {
     /// Reborrows this `OwnedOrMutRef` with a shorter lifetime.
     ///
     /// For an `Owned` variant, this borrows it as a `MutRef`.
@@ -21,7 +21,7 @@ impl<'r, T> OwnedOrMutRef<'r, T> {
     }
 }
 
-impl<'r, T> Deref for OwnedOrMutRef<'r, T> {
+impl<T> Deref for OwnedOrMutRef<'_, T> {
     type Target = T;
 
     fn deref(&self) -> &Self::Target {
@@ -32,7 +32,7 @@ impl<'r, T> Deref for OwnedOrMutRef<'r, T> {
     }
 }
 
-impl<'r, T> DerefMut for OwnedOrMutRef<'r, T> {
+impl<T> DerefMut for OwnedOrMutRef<'_, T> {
     fn deref_mut(&mut self) -> &mut Self::Target {
         match self {
             OwnedOrMutRef::Owned(t) => t,
@@ -41,7 +41,7 @@ impl<'r, T> DerefMut for OwnedOrMutRef<'r, T> {
     }
 }
 
-impl<'r, T> From<T> for OwnedOrMutRef<'r, T> {
+impl<T> From<T> for OwnedOrMutRef<'_, T> {
     fn from(v: T) -> Self {
         Self::Owned(v)
     }
